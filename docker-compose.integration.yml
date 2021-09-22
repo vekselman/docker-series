@@ -11,7 +11,7 @@ services:
       DEBUG: 1
     volumes:
       - dbdata:/var/lib/mysql
-      - ~/docker-series/_MySQL_Init_Script:/docker-entrypoint-initdb.d
+      - /home/leonid/docker-series/_MySQL_Init_Script:/docker-entrypoint-initdb.d
     restart: always
   accountownerapp:
     depends_on:
