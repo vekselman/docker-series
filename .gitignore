@@ -20,3 +20,4 @@ publish
 /Tests/*.user
 /Integration/*.user
 .vscode/settings.json
+.idea/
