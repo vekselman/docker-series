@@ -1,7 +1,7 @@
 ## Source code of changes you can find in
 https://github.com/vekselman/docker-series/tree/docker-series-continuous-integration-jenkins-end
 
-## Two main changes ware made to be able to run the build
+## Three main changes ware made to be able to run the build
 
 ### 1. In Dockerfiles
 Change from:
@@ -29,4 +29,15 @@ So example of working volume is:
 volumes:
       - dbdata:/var/lib/mysql
       - /home/leonid/docker-series/_MySQL_Init_Script:/docker-entrypoint-initdb.d
+```
+### 3. In _MySQL_Init_Script/init.sql file
+Add use of accounowner db as default before main sql queries   
+Change from:
+```sql
+DROP TABLE IF EXISTS `account`;
+```
+to
+```sql
+USE accountowner;
+DROP TABLE IF EXISTS `account`;
 ```
